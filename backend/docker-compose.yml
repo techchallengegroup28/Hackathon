@@ -1,0 +1,14 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: FIAP_BIBLIOTECA_ONLINE
+    volumes:
+      - ./FIAP_BIBLIOTECA_ONLINE.sql:/docker-entrypoint-initdb.d/FIAP_BIBLIOTECA_ONLINE.sql
+    ports:
+      - "5432:5432"

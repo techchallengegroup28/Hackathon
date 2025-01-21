@@ -1,0 +1,496 @@
+{
+	"info": {
+		"_postman_id": "b265e669-7d23-42a9-9e33-d1df96bc3e1a",
+		"name": "FIAP-Hackathon",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23243515"
+	},
+	"item": [
+		{
+			"name": "Conteudo",
+			"item": [
+				{
+					"name": "listar conteudos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/conteudos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conteudos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar conteudos (admin)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/conteudos/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conteudos",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lista conteudo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/conteudos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conteudos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pesquisa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/posts/search?buscar=01",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"posts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "buscar",
+									"value": "01"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar conteudo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "arquivo",
+									"type": "file",
+									"src": "/C:/Users/lucas/Downloads/1FSDT - Fase 5 - Hackaton.pdf"
+								},
+								{
+									"key": "titulo",
+									"value": "Dicas para Escrever um Bom Código",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Aprenda a escrever código limpo, eficiente e legível com estas dicas essenciais.",
+									"type": "text"
+								},
+								{
+									"key": "texto_conteudo",
+									"value": "A escrita de um bom código é crucial para o desenvolvimento de software de qualidade. Um código bem escrito é mais fácil de ler, entender, manter e depurar. Aqui estão algumas dicas para te ajudar a escrever um código melhor:\\n\\n**1. Use nomes descritivos:**\\nEscolha nomes que indiquem claramente o propósito das variáveis, funções e classes. Evite nomes genéricos como 'x' ou 'data'.\\n\\n**2. Mantenha seu código conciso:**\\nEscreva código que seja o mais curto possível, sem sacrificar a legibilidade. Remova código desnecessário e evite repetições.\\n\\n**3. Comente seu código:**\\nAdicione comentários para explicar a lógica do seu código, especialmente em partes complexas. Isso ajudará outras pessoas (e você mesmo no futuro) a entenderem o que o código faz.\\n\\n**4. Organize seu código:**\\nUse indentação consistente e espaços em branco para tornar seu código mais legível. Divida seu código em funções e classes menores para facilitar a organização.\\n\\n**5. Siga as convenções de estilo:**\\nCada linguagem de programação tem suas próprias convenções de estilo. Siga essas convenções para garantir que seu código seja consistente com outros projetos.\\n\\n**6. Teste seu código:**\\nEscreva testes unitários para garantir que seu código funcione como esperado. Isso ajudará a identificar e corrigir erros antes que eles causem problemas maiores.\\n\\n**7. Use ferramentas de análise de código:**\\nExistem ferramentas que podem analisar seu código e identificar problemas como código duplicado, complexidade excessiva e violações de estilo. Use essas ferramentas para melhorar a qualidade do seu código.\\n\\n**8. Aprenda com os outros:**\\nLeia código de outros desenvolvedores, participe de comunidades online e peça feedback sobre seu código. Aprender com os outros é uma ótima maneira de melhorar suas habilidades de programação.\\n\\nSeguir estas dicas te ajudará a escrever código de melhor qualidade, o que tornará seus projetos mais eficientes, fáceis de manter e menos propensos a erros.",
+									"type": "text"
+								},
+								{
+									"key": "imagem",
+									"value": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==",
+									"type": "text"
+								},
+								{
+									"key": "link_youtube",
+									"value": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+									"type": "text"
+								},
+								{
+									"key": "saiba_mais",
+									"value": "https://www.alura.com.br/artigos/clean-code",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/conteudos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conteudos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar conteudo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Dicas para Escrever um Bom Código 123\",\r\n  \"descricao\": \"Aprenda a escrever código limpo, eficiente e legível com estas dicas essenciais.\",\r\n  \"texto_conteudo\": \"A escrita de um bom código é crucial para o desenvolvimento de software de qualidade. Um código bem escrito é mais fácil de ler, entender, manter e depurar. Aqui estão algumas dicas para te ajudar a escrever um código melhor:\\n\\n**1. Use nomes descritivos:**\\nEscolha nomes que indiquem claramente o propósito das variáveis, funções e classes. Evite nomes genéricos como 'x' ou 'data'.\\n\\n**2. Mantenha seu código conciso:**\\nEscreva código que seja o mais curto possível, sem sacrificar a legibilidade. Remova código desnecessário e evite repetições.\\n\\n**3. Comente seu código:**\\nAdicione comentários para explicar a lógica do seu código, especialmente em partes complexas. Isso ajudará outras pessoas (e você mesmo no futuro) a entenderem o que o código faz.\\n\\n**4. Organize seu código:**\\nUse indentação consistente e espaços em branco para tornar seu código mais legível. Divida seu código em funções e classes menores para facilitar a organização.\\n\\n**5. Siga as convenções de estilo:**\\nCada linguagem de programação tem suas próprias convenções de estilo. Siga essas convenções para garantir que seu código seja consistente com outros projetos.\\n\\n**6. Teste seu código:**\\nEscreva testes unitários para garantir que seu código funcione como esperado. Isso ajudará a identificar e corrigir erros antes que eles causem problemas maiores.\\n\\n**7. Use ferramentas de análise de código:**\\nExistem ferramentas que podem analisar seu código e identificar problemas como código duplicado, complexidade excessiva e violações de estilo. Use essas ferramentas para melhorar a qualidade do seu código.\\n\\n**8. Aprenda com os outros:**\\nLeia código de outros desenvolvedores, participe de comunidades online e peça feedback sobre seu código. Aprender com os outros é uma ótima maneira de melhorar suas habilidades de programação.\\n\\nSeguir estas dicas te ajudará a escrever código de melhor qualidade, o que tornará seus projetos mais eficientes, fáceis de manter e menos propensos a erros.\",\r\n  \"imagem\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\",\r\n  \"link_youtube\": \"https://www.youtube.com/watch?v=dQw4w9WgXcQ\", \r\n  \"saiba_mais\": \"https://www.alura.com.br/artigos/clean-code\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/conteudos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conteudos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar conteudo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/conteudos/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"conteudos",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "listar usuarios",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "criar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"lucas\",\r\n    \"email\": \"lucas@email.com\",\r\n    \"senha\": \"123456\",\r\n    \"tipo_usuario\": \"aluno\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"lucas1\",\r\n    \"email\": \"lucas@admin.com\",\r\n    \"senha\": \"123456\",\r\n    \"tipo_usuario\": \"aluno\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar usuario",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{JWT_TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/usuarios/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"usuarios",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autenticar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"professor@email.com\",\r\n    \"senha\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/autenticacao/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"autenticacao",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "renovar token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"professor@email.com\",\r\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibm9tZSI6IlByb2Zlc3NvciIsImVtYWlsIjoicHJvZmVzc29yQGVtYWlsLmNvbSIsInRpcG9fdXN1YXJpbyI6InByb2Zlc3NvciIsImlhdCI6MTczNzQ5MTc4NX0.Nsj2MMAOiP1dV-qxVEaxIrF85QxiuOFF9YrTE5F7FiM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/autenticacao/renovar-token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"autenticacao",
+						"renovar-token"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

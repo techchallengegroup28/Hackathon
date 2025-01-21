@@ -1,0 +1,8 @@
+# Use a imagem oficial do PostgreSQL como base
+FROM postgres:latest
+
+# Copia o dump para o container
+COPY FIAP_BIBLIOTECA_ONLINE.sql /docker-entrypoint-initdb.d/
+
+# Define a variável de ambiente com o nome do banco de dados
+ENV POSTGRES_DB=FIAP_BIBLIOTECA_ONLINE

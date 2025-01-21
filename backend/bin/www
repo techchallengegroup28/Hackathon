@@ -1,0 +1,89 @@
+#!/usr/bin/env node
+
+/**
+ * Dependências do módulo.
+ */
+
+var app = require("../app");
+var debug = require("debug")("biblioteca_online:servidor");
+var http = require("http");
+
+/**
+ * Obter a porta do ambiente e armazená-la no Express.
+ */
+
+var porta = normalizarPorta(process.env.PORT || "3000");
+app.set("port", porta);
+
+/**
+ * Criar o servidor HTTP.
+ */
+
+var servidor = http.createServer(app);
+
+/**
+ * Escutar na porta fornecida em todas as interfaces de rede.
+ */
+
+servidor.listen(porta);
+servidor.on("error", aoOcorrerErro);
+servidor.on("escutando", aoEscutar);
+
+/**
+ * Normalizar uma porta para número, string ou falso.
+ */
+
+function normalizarPorta(valor) {
+  var porta = parseInt(valor, 10);
+
+  if (isNaN(porta)) {
+    // nome do pipe
+    return valor;
+  }
+
+  if (porta >= 0) {
+    // número da porta
+    return porta;
+  }
+
+  return false;
+}
+
+/**
+ * Listener de eventos para "error" no servidor HTTP.
+ */
+
+function aoOcorrerErro(erro) {
+  if (erro.syscall !== "listen") {
+    throw erro;
+  }
+
+  var vinculo = typeof porta === "string" ? "Pipe " + porta : "Porta " + porta;
+
+  // lidar com erros específicos ao escutar com mensagens amigáveis
+  switch (erro.code) {
+    case "EACCES":
+      console.error(vinculo + " requer privilégios elevados");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(vinculo + " já está em uso");
+      process.exit(1);
+      break;
+    default:
+      throw erro;
+  }
+}
+
+/**
+ * Listener de eventos para "listening" no servidor HTTP.
+ */
+
+function aoEscutar() {
+  var endereco = servidor.address();
+  var vinculo =
+    typeof endereco === "string"
+      ? "pipe " + endereco
+      : "porta " + endereco.port;
+  debug("Escutando em " + vinculo);
+}
