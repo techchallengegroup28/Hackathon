@@ -1,5 +1,3 @@
-# Tech Challenge 3 🚀
-
 ## Setup inicial
 
 1. Rode o comando abaixo para clonar o repositório:
