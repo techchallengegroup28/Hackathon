@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.header h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 46.88px;
+  text-align: left;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.button-submit {
+  background-color: transparent;
+  color: #488FCA;
+  border: 1px solid #488FCA;
+  padding: 5px 30px;
+}
+
+@media (max-width: 767.98px) {
+  .header {
+    justify-content: center;
+  }
+}

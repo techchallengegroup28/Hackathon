@@ -1,0 +1,16 @@
+.long-text-container {
+    max-height: 700px; /* Define a altura máxima da caixa de texto */
+    overflow-y: auto; /* Habilita a rolagem vertical quando o conteúdo ultrapassa o tamanho */    
+    
+    color: #c9c6c6;
+    border-radius: 8px;
+    line-height: 1.6; /* Linha para melhorar a leitura */
+  }
+  
+  .long-text-container p {
+    white-space: pre-wrap; /* Mantém as quebras de linha do texto */
+    word-wrap: break-word; /* Quebra as palavras muito longas para não ultrapassar a largura */
+    font-family: inherit;
+
+  }
+  

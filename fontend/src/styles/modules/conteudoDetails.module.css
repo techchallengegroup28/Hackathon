@@ -1,0 +1,68 @@
+/*.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+*/
+  .ConteudoDetailstitle {
+    color: #488FCA;
+    font-size: 36px;
+  }
+  
+  .ConteudoDetailsmeta {
+    font-size: 14px;
+    color: #cccccc;
+    margin-bottom: 10px;
+  }
+  
+  .ConteudoDetailsbody {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  .placeholderimage {
+    background-color:#D9D9D9;    
+    width: 100%;
+    margin-top: 10px;   
+    height: 200px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+  }
+
+  .photo{
+    border-radius: 16px;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 200px;
+    position: relative;
+  }
+
+  .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+  }
+
+  .videoContainer {
+    position: relative;
+    padding-bottom: 45.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 1rem;
+    max-width: 100%;
+  }
+
+  .videoContainer iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .card{
+    background-color: #f2f2f2;
+    border-radius: 1rem;
+  }

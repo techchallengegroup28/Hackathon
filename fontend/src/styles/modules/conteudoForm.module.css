@@ -1,0 +1,54 @@
+  .title {
+    color: #488FCA;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .label {
+    display: block;
+    margin-top: 20px;
+    /* margin-bottom: 8px; */
+    font-size: 18px;
+  }
+  
+  .input, .textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    border: 1px solid #333;
+    background-color: transparent;
+  }
+  
+  .input[type="file"] {
+    border: none;
+  }
+  
+  .textarea {
+    min-height: 120px;
+  }
+  
+  .button {
+    width: 210px;   
+    height: 40px; 
+    margin-top: 20px;
+    border: 2px solid #488FCA;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #488FCA;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .button:hover {
+    background-color: #488FCA;
+    color: white;
+  }
+  
+  .errormessage {
+    color: #ee3010;
+    margin-top: 2px;  
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+  

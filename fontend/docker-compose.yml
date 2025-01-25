@@ -1,0 +1,19 @@
+version: '3.8'
+
+# define os containers utilizados
+services:
+  techchallengefase3:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: techchallengefase3_image:latest
+    container_name: techchallengefase3
+    ports:
+      - "3001:3001"
+    volumes:
+      - .:/app
+    environment:
+      PORT_BUILD: 3001
+
+# para rodar o docker-compose.yml, execute o comando:
+# docker compose up
