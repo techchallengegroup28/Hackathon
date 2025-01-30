@@ -1,11 +1,9 @@
 "use client";
 
-import iconSair from "@/../../public/assets/img/icon-sair.svg";
 import Link from "next/link";
-import Image from "next/image";
 import Cookie from "js-cookie";
 import { useRouter, usePathname } from "next/navigation";
-import Dropdown from "react-bootstrap/Dropdown"; // Importe o componente Dropdown do React-Bootstrap
+import Dropdown from "react-bootstrap/Dropdown";
 
 import styles from "@/styles/modules/header.module.css";
 
@@ -33,6 +31,7 @@ export default function Header() {
         </Link>
 
         <div className="d-flex align-items-center">
+        {(pathname.includes("admin") || pathname.includes("alunos"))  && (
           <Dropdown>
             <Dropdown.Toggle
               variant="link"
@@ -45,16 +44,12 @@ export default function Header() {
               <Dropdown.Item href="/alunos">Alunos</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
+          )}
 
           {!pathname.includes("login") && (
-            <button className="cursor-pointer" onClick={Logout}>
-              <Image
-                src={iconSair}
-                alt="Sair da Biblioteca Digital"
-                className="me-2"
-              />
+            <div className="cursor-pointer text-white" onClick={Logout}>
               <span>Sair</span>
-            </button>
+            </div>
           )}
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function ListAlunosAdmin() {
           <span>{aluno.nome}</span>
           <span>{aluno.email}</span>
           <span className={styles.actions}>
-            <Link href={`/alunos/editar/${aluno.id}`}>
+            <Link href={`/alunos/alunos-editar/${aluno.id}`}>
               <Image src={iconEditar} alt="Editar" className="me-1" />
             </Link>
             <div onClick={() => delAluno(aluno.id)}>

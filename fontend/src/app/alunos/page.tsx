@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter();
 
   const newAluno = () => {
-    router.push("/alunos/criar");
+    router.push("/alunos/alunos-criar");
   };
 
   return (

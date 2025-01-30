@@ -21,34 +21,41 @@ export async function getAllUsers(
       throw new Error("Erro ao buscar os usuarios.");
     }
 
-    const conteudos = await res.json();
-    return conteudos.usuarios;
+    const aluno = await res.json();
+    return aluno.usuarios;
   } catch (error) {
     console.error("Erro ao buscar usuarios:", error);
     return null;
+    throw error;
   }
 }
-
-export async function getUserById(idUser: number): Promise<IUsuario | null> {
+export async function getUserById( idUser: string, token?: string): Promise<IUsuario | undefined> {
   try {
-    let res;
-    if (idUser) {
-      res = await fetch(
-        process.env.NEXT_PUBLIC_BASE_URL + "/api/usuarios/" + idUser
-      );
-    } else {
+    if (!idUser) {
       throw new Error("Parâmetro passado é vazio ou nulo.");
     }
 
-    if (!res.ok) {
-      throw new Error("Erro ao buscar o usuario.");
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/api/usuarios/${idUser}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Erro na requisição: ${response.status} ${response.statusText}`);
     }
 
-    const conteudo = await res.json();
-    return conteudo;
+    const aluno = await response.json();
+
+    return aluno
+    
   } catch (error) {
-    console.error("Erro ao buscar usuario:", error);
-    return null;
+    console.error("Erro ao buscar usuário:", error);
   }
 }
 
